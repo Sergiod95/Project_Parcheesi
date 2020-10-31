@@ -9,17 +9,17 @@
 
 - eliminate(self,color,player): function used inside run_game() in order to follow the rule of eliminating oponent pieces in unsafe spots.
 
--match_screen(self): runs when the class is initialised, it is used to create the grid for the game.
+- match_screen(self): runs when the class is initialised, it is used to create the grid for the game.
 
--roll_dice(self,color): the function runs on the function run_game(); it creates the box that tells the player who is playing and creates the numbers from the dice.
+- roll_dice(self,color): the function runs on the function run_game(); it creates the box that tells the player who is playing and creates the numbers from the dice.
 
--menu_dif(self): runs when the class is initialised; is the first box that ask the player who is playing by picking a color.
+- menu_dif(self): runs when the class is initialised; is the first box that ask the player who is playing by picking a color.
 
--option(self):runs in menu_dif(); mostly checks the input to make menu_dif() work.
+- option(self):runs in menu_dif(); mostly checks the input to make menu_dif() work.
 
--win_check( self,current_p):  Runs on the function run_game(); it verefies if the player won the game.
+- win_check( self,current_p):  Runs on the function run_game(); it verefies if the player won the game.
 
--input_validation(self,player): used to pick the piece that the user wants to move.
+- input_validation(self,player): used to pick the piece that the user wants to move.
 
 # Class Player
   this is the class that orginise the information of each player and helps the pieces navegate the grid; important variables to consider are the color of the player and the four pieces from the class piece.
@@ -37,23 +37,23 @@
 # Class Piece
   holds all the information about the pieces including position, status, and how many steps from the nest.
 
-  update_location(self,new_center):change the location of the piece.
+  - update_location(self,new_center):change the location of the piece.
 
-  update_nest(self,status):change if the piece is inside the nest or not.
+  - update_nest(self,status):change if the piece is inside the nest or not.
   
-  eliminated(self): resets the piece to the nest if it is eliminated.
+  - eliminated(self): resets the piece to the nest if it is eliminated.
 
-  return_x(self): return the x value.
+  - return_x(self): return the x value.
 
-  return_y(self): return the y value.
+  - return_y(self): return the y value.
 
-  return_stat(self): return the status of the piece.
+  - return_stat(self): return the status of the piece.
 
-  return_position(self): return the position(Point) of the piece.
+  - return_position(self): return the position(Point) of the piece.
 
-  set_steps(self,step): change how many steps the piece has walked.
+  - set_steps(self,step): change how many steps the piece has walked.
 
-  set_status(self,stat): change status of the piece.
+  - set_status(self,stat): change status of the piece.
 
-  return_steps(self): return the number of steps.
+  - return_steps(self): return the number of steps.
 
