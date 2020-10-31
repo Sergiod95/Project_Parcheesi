@@ -2,7 +2,7 @@
 
   This is the game of parcheesi where the objective is to reach the center of the board with all your pieces before the other players. the starts by asking the user which player are going to play by clicking on the colors then a box is pronted saying whos turn is it and to roll the dice. the game uses three classes in order to work which are game_master, player, and piece. the game_master creates the player depending on the input of the user and then the player creates four pieces, each one representing the four pieces in the traditional game.
 
-# class Game_master
+# Class Game_master
   the class when initialised creates the board that is going to be used and the creates the players and the pieces on the board.
 
 - run_game(self): the most inportant function of the class, it creates the diferent input boxes and makes the game run, it ends when a player win.
@@ -21,7 +21,7 @@
 
 -input_validation(self,player): used to pick the piece that the user wants to move.
 
-# class Player
+# Class Player
   this is the class that orginise the information of each player and helps the pieces navegate the grid; important variables to consider are the color of the player and the four pieces from the class piece.
   
 - return_color(self): returns the color of the player
@@ -34,7 +34,7 @@
 
 - player_turn(self,ind,dice_rol,i): the most important function of the class; used to controll the pieces on the board.
 
-# class Piece
+# Class Piece
   holds all the information about the pieces including position, status, and how many steps from the nest.
 
   update_location(self,new_center):change the location of the piece.
