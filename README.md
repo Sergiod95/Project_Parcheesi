@@ -2,41 +2,58 @@
 
   This is the game of parcheesi where the objective is to reach the center of the board with all your pieces before the other players. the starts by asking the user which player are going to play by clicking on the colors then a box is pronted saying whos turn is it and to roll the dice. the game uses three classes in order to work which are game_master, player, and piece. the game_master creates the player depending on the input of the user and then the player creates four pieces, each one representing the four pieces in the traditional game.
 
-# Game_master
+# class Game_master
   the class when initialised creates the board that is going to be used and the creates the players and the pieces on the board.
 
--run_game(self): the most inportant function of the class, it creates the diferent input boxes and makes the game run, it ends when a player win.
+- run_game(self): the most inportant function of the class, it creates the diferent input boxes and makes the game run, it ends when a player win.
 
--eliminate(self,color,player): function used inside run_game() in order to follow the rule of eliminating oponent pieces in unsafe spots.
+- eliminate(self,color,player): function used inside run_game() in order to follow the rule of eliminating oponent pieces in unsafe spots.
 
--
+-match_screen(self): runs when the class is initialised, it is used to create the grid for the game.
 
+-roll_dice(self,color): the function runs on the function run_game(); it creates the box that tells the player who is playing and creates the numbers from the dice.
 
-# Branch B (game_functions)
+-menu_dif(self): runs when the class is initialised; is the first box that ask the player who is playing by picking a color.
 
-The updated versions uses functions in order to reduce the size of the main and make it more functional and easy to debug.
+-option(self):runs in menu_dif(); mostly checks the input to make menu_dif() work.
 
-The menu_dif(win,dificulty) is used to draw and later undraw a menu to choose the dificulty of the game being easy
-(the computer pick random places), normal(the computer try to block the player victory), and hard(the original dificulty of the game where the computer will block and try to win the game).
+-win_check( self,current_p):  Runs on the function run_game(); it verefies if the player won the game.
 
-match_screen(win,grid) will create the screen with the grid for the player and the cumputer to play.
+-input_validation(self,player): used to pick the piece that the user wants to move.
 
-reset_screen(win,grid) will erase and reset the game screen and the inportant variables in order to play again.
+# class Player
+  this is the class that orginise the information of each player and helps the pieces navegate the grid; important variables to consider are the color of the player and the four pieces from the class piece.
+  
+- return_color(self): returns the color of the player
+       
+- return_center(self, ind): return the center(Point) of the piece with the id.
 
-player_turn(win,grid, i) is the function that lets the player play is turn, it will stop the player from making incorrect moves, at the end the function would check if the player won the game.
+- return_status(self,ind): return the status("Safe" or "NotSafe") of the piece with the id; used on the function eliminate() to determine if the piece is eliminated or not.
 
-computer_turn(win,grid, i,dificulty) is the functions that plays for the computer, it varies depending on the dificulty that the player chose. it is the longest function because it evaluates all the possible situations. it will evaluate if the computer won at the end of it's move.
+- removed(self,ind): function that helps the function eliminate().
 
-rematch(win,contin_playing) is a menu that ask the user if it wants to play again, if the answer is "Yes" then the program would start from the begining runing the function reset_screen(win,grid) in order to clean the screen from last match.
+- player_turn(self,ind,dice_rol,i): the most important function of the class; used to controll the pieces on the board.
 
-win_check() is used to see if there are the same symbols in a row and declare the winner of the game or the draw if needed.
+# class Piece
+  holds all the information about the pieces including position, status, and how many steps from the nest.
 
-# Branch C (game_classes)
+  update_location(self,new_center):change the location of the piece.
 
-another updated version of the game this time is organized in classes/objects.
+  update_nest(self,status):change if the piece is inside the nest or not.
+  
+  eliminated(self): resets the piece to the nest if it is eliminated.
 
-the prinsipal class is the game_master(), the game_master() or gm uses the same functions that were used in the Branch B(gmae_functions) but adapted to be used in an object.
+  return_x(self): return the x value.
 
-the gm has to more objects inside being the class player and the class computer, this two classes has their own function of turn that are similar to the function player_turn() and computer_turn(); however, the win_check() is a function of the class game_master() and it require the principal variables of the player and computer in order to verify
+  return_y(self): return the y value.
 
-the lenght of the main in this code was reduced to just two lines having most of the process in the object gm.
+  return_stat(self): return the status of the piece.
+
+  return_position(self): return the position(Point) of the piece.
+
+  set_steps(self,step): change how many steps the piece has walked.
+
+  set_status(self,stat): change status of the piece.
+
+  return_steps(self): return the number of steps.
+
