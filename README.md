@@ -1,6 +1,6 @@
 # ProjectFinal Parcheesi
 
-  This is the game of parcheesi where the objective is to reach the center of the board with all your pieces before the other players. the starts by asking the user which player are going to play by clicking on the colors then a box is pronted saying whos turn is it and to roll the dice. the game uses three classes in order to work which are game_master, player, and piece. the game_master creates the player depending on the input of the user and then the player creates four pieces, each one representing the four pieces in the traditional game.
+  This is the game of parcheesi where the objective is to reach the center of the board with all your pieces before the other players. the starts by asking the user which player are going to play by clicking on the colors then a box is printed saying who’s turn is it and to roll the dice. the game uses three classes in order to work which are gamemaster, player, and piece. the game_master creates the player depending on the input of the user and then the player creates four pieces, each one representing the four pieces in the traditional game.
 
 # Class Game_master
   the class when initialised creates the board that is going to be used and the creates the players and the pieces on the board.
